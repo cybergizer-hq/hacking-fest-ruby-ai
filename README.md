@@ -16,6 +16,8 @@ text.emo_eval
 
 That means the emotion score of `text` is `0.011329314555041492`, this text is positive.
 
+It can also be used in any chat applications. And users can correct their behavior depending on the emotion score. It allows to make any chat more effective.
+
 In chat application you can use `text.emo_eval` to get the emotion score of the text. The score is between `0` and `1` and the higher the score the more positive the text is. In chat this score is shown in the chat message using emojis - `🙋` for positive, `😐` for neutral and `😎` for negative near the user message.
 
 ![chat](pic/chat.png)
