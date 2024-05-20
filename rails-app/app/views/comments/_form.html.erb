@@ -1,18 +1,7 @@
 <%= simple_form_for(@comment) do |f| %>
-  <% if comment.errors.any? %>
-    <div style="color: red">
-      <h2><%= pluralize(comment.errors.count, "error") %> prohibited this comment from being saved:</h2>
-
-      <ul>
-        <% comment.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
-
   <div class="form-inputs">
-    <%= f.input :message %>
+    <%= f.input :message, required: "required" %>
+    <%= f.hidden_field :post_id, value: 1 %>
     <%= f.hidden_field :user_id, value: current_user.id %>
   </div>
 

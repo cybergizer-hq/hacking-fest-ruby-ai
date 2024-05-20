@@ -25,7 +25,8 @@ class CommentsController < ApplicationController
 
     respond_to do |format|
       if @comment.save
-        format.html { redirect_to comment_url(@comment), notice: "Comment was successfully created." }
+        SentimentAnalysisService.assign_analysis(@comment)
+        format.html { redirect_to post_url(@comment.post), notice: "Comment was successfully created." }
         format.json { render :show, status: :created, location: @comment }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -38,7 +39,8 @@ class CommentsController < ApplicationController
   def update
     respond_to do |format|
       if @comment.update(comment_params)
-        format.html { redirect_to comment_url(@comment), notice: "Comment was successfully updated." }
+        SentimentAnalysisService.assign_analysis(@comment)
+        format.html { redirect_to post_url(@comment.post), notice: "Comment was successfully updated." }
         format.json { render :show, status: :ok, location: @comment }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -65,6 +67,6 @@ class CommentsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def comment_params
-      params.require(:comment).permit(:user_id, :message, :label, :emoji, :score)
+      params.require(:comment).permit(:user_id, :post_id, :message, :label, :emoji, :score)
     end
 end

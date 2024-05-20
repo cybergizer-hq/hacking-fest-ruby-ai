@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+  before_action :authorize_resource, except: %i[show index]
   before_action :set_post, only: %i[ show edit update destroy ]
 
   # GET /posts or /posts.json
@@ -8,6 +9,8 @@ class PostsController < ApplicationController
 
   # GET /posts/1 or /posts/1.json
   def show
+    @comment = Comment.new
+    @comments = @post.comments.includes(:user).order(id: :asc)
   end
 
   # GET /posts/new
@@ -58,6 +61,11 @@ class PostsController < ApplicationController
   end
 
   private
+
+    def authorize_resource
+      authorize Post, :manage?
+    end
+
     # Use callbacks to share common setup or constraints between actions.
     def set_post
       @post = Post.find(params[:id])

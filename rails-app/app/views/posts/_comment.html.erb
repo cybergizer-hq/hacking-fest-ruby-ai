@@ -1,0 +1,7 @@
+<div class="comment"> 
+  <strong>
+    <%= comment.user.email %>:
+  </strong> 
+  <%= comment.message %> 
+  <%= comment.emoji.html_safe if current_user.admin? %> 
+</div>
