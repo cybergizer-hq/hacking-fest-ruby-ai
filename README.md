@@ -5,38 +5,31 @@ Welcome to the Ruby + AI Hacking Fest! This online hackathon is a weekend-long e
 
 # Rules and Guidelines
 ### Setup
-* The application must run on a local machine (Mac or Linux).
-* Integrate any existing and publicly available AI model with a Rails application.
-* Docker is preferable but not mandatory.
+It is sentiment analysis of the message. Comments belonging to the post can be **NEGATIVE**, **NEUTRAL** and **POSITIVE**. It is a microservice architecture, Flask is used for AI part (labelling) and Rails is for web. This app can be used to find out what opinions people have about the news or something new. This app can be very helpful in areas such as legislation, commersing, business.
 
-### Development Rules
-* You are allowed to use Hugging Face and their open-source libraries.
-* All work must be original and created during the hackathon.
-* Usage of pre-built integrations for Ruby and Rails, like Ollama, is prohibited.
+**AI**
+transformers library is used from HuggingFace, pipeline analyzes loaded text
 
-### Submission Requirements
-* A public repository on GitHub containing the application source code.
-* The AI model and integration details.
-* Clear instructions on how to set up and run the application locally.
+### Python
+1. Create a new virtual environment:
+python -m venv venv
+2. Activate the virtual environment:
+source venv/bin/activate
+3. Install Flask and transformers dependencies:
+pip install flask transformers
 
-# Judging Criteria
-### Functionality:
-* How well does the application run?
-* Does it integrate the AI model effectively?
+### Ruby on Rails Setup
 
-### Innovation:
-* How unique and creative is the solution?
-* Technical Difficulty:
-* What challenges did you overcome?
-* What was utilised from your previous experience?
+1. Run database migrations:
+rails db:migrate 
 
-### Documentation:
-* Are the setup instructions clear and easy to follow?
-* Was it clear to follow and get it the app up and running?
+2. Seed the database (if needed):
+rails db:seed
 
-### Presentation:
-* How well is it presented at the demo session?
-* How interesting the idea and its applicability?
+### Running the application
+1. Start the Flask server:
+python3 app.py
+2. Start the Ruby on Rails server:
+rails s
 
-# Prizes
-* Grand Prize: $500 for the best overall project.
+![alt text](image.png)
