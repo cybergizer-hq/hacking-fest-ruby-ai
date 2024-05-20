@@ -12,25 +12,37 @@ transformers library is used from HuggingFace, pipeline analyzes loaded text
 
 ### Python
 1. Create a new virtual environment:
-```python3 -m venv venv```
+```python
+python3 -m venv venv
+```
 2. Activate the virtual environment:
-```source venv/bin/activate```
+```python
+source venv/bin/activate
+```
 3. Install Flask and transformers dependencies:
-```pip install flask transformers```
-```pip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cpu```
+```python
+pip install flask transformers
+pip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cpu
+```
 
 
 ### Ruby on Rails Setup
 
 1. Database setup:
-```rails db:create```
-```rails db:migrate```
-```rails db:seed```
+```ruby
+rails db:create
+rails db:migrate
+rails db:seed
+```
 
 ### Running the application
 1. Start the Flask server:
-```python3 app.py```
-2. Start the Ruby on Rails server:
-```rails s```
+```python
+python3 app.py
+```
+3. Start the Ruby on Rails server:
+```ruby
+rails s
+```
 
 ![alt text](image.png)
