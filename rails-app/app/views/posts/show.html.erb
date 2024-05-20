@@ -10,7 +10,7 @@
 <br><br>
 <%= simple_form_for(@comment) do |f| %>
   <div class="form-inputs">
-    <%= f.input :message, input_html: { required: true } %>
+    <%= f.input :message, required: "required" %>
     <%= f.hidden_field :post_id, value: @post.id %>
     <%= f.hidden_field :user_id, value: current_user.id %>
   </div>
