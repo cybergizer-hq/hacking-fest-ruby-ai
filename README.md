@@ -40,7 +40,7 @@ rails db:seed
 ```python
 python3 app.py
 ```
-3. Start the Ruby on Rails server:
+2. Start the Ruby on Rails server:
 ```ruby
 rails s
 ```
