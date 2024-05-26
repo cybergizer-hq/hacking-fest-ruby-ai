@@ -38,6 +38,7 @@ rails db:seed
 ### Running the application
 1. Start the Flask server:
 ```python
+python3 save_model.py
 python3 app.py
 ```
 2. Start the Ruby on Rails server:

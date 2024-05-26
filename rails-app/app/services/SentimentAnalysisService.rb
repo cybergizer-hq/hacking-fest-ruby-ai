@@ -13,19 +13,18 @@ class SentimentAnalysisService
 
   def self.assign_analysis(record)
     emojis = {
-      'POSITIVE' => "<i class='bi bi-emoji-smile'></i>",
+      'NEGATIVE' => "<i class='bi bi-emoji-frown'></i>",
       'NEUTRAL' => "<i class='bi bi-emoji-expressionless-fill'></i>",
-      'NEGATIVE' => "<i class='bi bi-emoji-frown'></i>"
+      'POSITIVE' => "<i class='bi bi-emoji-smile'></i>"
     }
 
     result = predict(record.message)
     return unless result.is_a?(Array)
 
     response = result.first
-    label = response['label']
+    label = response['label'].upcase
     score = response['score']
 
-    label = 'NEUTRAL' if score >= 33 && score <= 66
     record.update(emoji: emojis[label], score: score, label: label)
   end
 end

@@ -3,5 +3,6 @@
     <%= comment.user.email %>:
   </strong> 
   <%= comment.message %> 
-  <%= comment.emoji.html_safe if current_user.admin? %> 
+  <%= comment.emoji.html_safe if current_user.admin? %>
+  (<%= comment.score.round(2) %>)
 </div>
