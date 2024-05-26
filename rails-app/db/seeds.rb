@@ -1,0 +1,1 @@
+User.create(email: 'makhmadiyorovfakhriddin@gmail.com', password: 'testpass', role: :admin)

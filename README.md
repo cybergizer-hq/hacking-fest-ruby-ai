@@ -5,38 +5,45 @@ Welcome to the Ruby + AI Hacking Fest! This online hackathon is a weekend-long e
 
 # Rules and Guidelines
 ### Setup
-* The application must run on a local machine (Mac or Linux).
-* Integrate any existing and publicly available AI model with a Rails application.
-* Docker is preferable but not mandatory.
+It is sentiment analysis of the message. Comments belonging to the post can be **NEGATIVE**, **NEUTRAL** and **POSITIVE**. It is a microservice architecture, Flask, pytorch, transformers are used for AI part (labelling) and Rails is for web. This app can be used to find out what opinions people have about the news or something new. This app can be very helpful in areas such as legislation, commersing, business.
 
-### Development Rules
-* You are allowed to use Hugging Face and their open-source libraries.
-* All work must be original and created during the hackathon.
-* Usage of pre-built integrations for Ruby and Rails, like Ollama, is prohibited.
+**AI**
+transformers library is used from HuggingFace, pipeline analyzes loaded text
 
-### Submission Requirements
-* A public repository on GitHub containing the application source code.
-* The AI model and integration details.
-* Clear instructions on how to set up and run the application locally.
+### Python
+1. Create a new virtual environment:
+```python
+python3 -m venv venv
+```
+2. Activate the virtual environment:
+```python
+source venv/bin/activate
+```
+3. Install Flask and transformers dependencies:
+```python
+pip install flask transformers
+pip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cpu
+```
 
-# Judging Criteria
-### Functionality:
-* How well does the application run?
-* Does it integrate the AI model effectively?
 
-### Innovation:
-* How unique and creative is the solution?
-* Technical Difficulty:
-* What challenges did you overcome?
-* What was utilised from your previous experience?
+### Ruby on Rails Setup
 
-### Documentation:
-* Are the setup instructions clear and easy to follow?
-* Was it clear to follow and get it the app up and running?
+1. Database setup:
+```ruby
+rails db:create
+rails db:migrate
+rails db:seed
+```
 
-### Presentation:
-* How well is it presented at the demo session?
-* How interesting the idea and its applicability?
+### Running the application
+1. Start the Flask server:
+```python
+python3 save_model.py
+python3 app.py
+```
+2. Start the Ruby on Rails server:
+```ruby
+rails s
+```
 
-# Prizes
-* Grand Prize: $500 for the best overall project.
+![alt text](image.png)
