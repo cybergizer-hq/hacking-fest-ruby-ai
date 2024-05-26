@@ -5,7 +5,7 @@ Welcome to the Ruby + AI Hacking Fest! This online hackathon is a weekend-long e
 
 # Rules and Guidelines
 ### Setup
-It is sentiment analysis of the message. Comments belonging to the post can be **NEGATIVE**, **NEUTRAL** and **POSITIVE**. It is a microservice architecture, Flask is used for AI part (labelling) and Rails is for web. This app can be used to find out what opinions people have about the news or something new. This app can be very helpful in areas such as legislation, commersing, business.
+It is sentiment analysis of the message. Comments belonging to the post can be **NEGATIVE**, **NEUTRAL** and **POSITIVE**. It is a microservice architecture, Flask, pytorch, transformers are used for AI part (labelling) and Rails is for web. This app can be used to find out what opinions people have about the news or something new. This app can be very helpful in areas such as legislation, commersing, business.
 
 **AI**
 transformers library is used from HuggingFace, pipeline analyzes loaded text
