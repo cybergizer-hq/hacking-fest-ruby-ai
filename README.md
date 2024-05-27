@@ -1,42 +1,56 @@
-# 🤖 Ruby + AI Hacking Fest 🤖
-## --> ❗️ fork this repo in order to participate in the hacking fest.
+# Ruby + AI Hacking Fest project
+*forked repository in order to participate in the hacking fest.
 
-Welcome to the Ruby + AI Hacking Fest! This online hackathon is a weekend-long event starting on Friday night, May 17th, and concluding on Sunday afternoon, May 19th. The goal is to create a boilerplate Rails application using any existing, publicly available AI model. Participants will integrate the model into their Rails application via API, ensuring it runs seamlessly on a local machine.
+Rails app with implemention [openlm-research/open_llama_7b](https://huggingface.co/openlm-research/open_llama_7b). Like other large language models, LLaMA works by taking a sequence of words as an input and predicts a next word to recursively generate text.
 
-# Rules and Guidelines
-### Setup
-* The application must run on a local machine (Mac or Linux).
-* Integrate any existing and publicly available AI model with a Rails application.
-* Docker is preferable but not mandatory.
+# Getting started
 
-### Development Rules
-* You are allowed to use Hugging Face and their open-source libraries.
-* All work must be original and created during the hackathon.
-* Usage of pre-built integrations for Ruby and Rails, like Ollama, is prohibited.
+Before we start you must be sure that **at least 35G** of memory are free and you have installed:
 
-### Submission Requirements
-* A public repository on GitHub containing the application source code.
-* The AI model and integration details.
-* Clear instructions on how to set up and run the application locally.
+- [Ruby 3.3.1](https://gist.github.com/pboksz/4649025)
+- [Python3](https://www.python.org/downloads/)
+- [Ruby on Rais 7+ version](https://guides.rubyonrails.org/v5.1/getting_started.html)
+- [PostgreSQL](https://www.postgresql.org/docs/current/tutorial-install.html)
+- [Npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)
+- [Yarn](https://classic.yarnpkg.com/lang/en/docs/install/#debian-stablehttps://classic.yarnpkg.com/lang/en/docs/install/#debian-stable)
 
-# Judging Criteria
-### Functionality:
-* How well does the application run?
-* Does it integrate the AI model effectively?
+## Installation
+You can clone an existing repository from GitHub.com to your local computer, or to a codespace:
 
-### Innovation:
-* How unique and creative is the solution?
-* Technical Difficulty:
-* What challenges did you overcome?
-* What was utilised from your previous experience?
+```sh
+   $ git clone -b daria git@github.com:DariaAres/hacking-fest-ruby-ai.git
+```
 
-### Documentation:
-* Are the setup instructions clear and easy to follow?
-* Was it clear to follow and get it the app up and running?
+## Configure
 
-### Presentation:
-* How well is it presented at the demo session?
-* How interesting the idea and its applicability?
+1. Installing dependencies:
 
-# Prizes
-* Grand Prize: $500 for the best overall project.
+    ```sh
+    $ bundle install
+    $ rails assets:precompile
+    ```
+
+1. You can go to `.saple_env`, rename it to `.env` and write following values:
+
+    ```sh
+    $ POSTGRES_USER=username
+    $ POSTGRES_PASSWORD=password
+    ```
+
+1. Then you should create the databases defined in the current environment and run pending migrations:
+
+    ```sh
+    $ rails db:create db:migrate
+    ```
+## Usage
+
+- ### Start the web server locally
+
+    This command launches a Puma web server:
+
+    ```sh
+    $ rails s
+    ```
+    You'll use this any time you want to access your application through a web browser.
+
+    Run with `--help` or `-h` for options.

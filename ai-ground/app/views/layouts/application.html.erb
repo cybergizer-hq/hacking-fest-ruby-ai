@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>AI Ground</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag "styles_overrides", "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_include_tag "application", "data-turbo-track": "reload", type: "module" %>
+
+    <script src="http://cdn.tailwindcss.com"></script>
+  </head>
+
+  <body class="flex flex-col min-h-screen bg-white dark:bg-gray-900 ">
+    <%= render partial: 'layouts/header' %>
+    <%= render partial: 'layouts/flash_messages' %>
+    <main>
+      <%= yield %>
+    </main>
+
+    <%= render partial: 'layouts/footer' %>
+  </body>
+</html>
